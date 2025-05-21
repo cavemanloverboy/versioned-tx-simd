@@ -1,0 +1,30 @@
+[package]
+name = "v1tx"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+serde = [
+    "dep:serde",
+    "dep:serde_derive",
+    "dep:solana-short-vec",
+    "solana-hash/serde",
+    "solana-pubkey/serde",
+    "solana-message/serde",
+    "bitflags/serde",
+]
+default = ["serde"]
+
+[dependencies]
+bitflags = "2.9.1"
+serde = { version = "1.0.219", optional = true }
+serde_derive = { version = "1.0.219", optional = true }
+solana-compute-budget-interface = "2.2.2"
+solana-hash = "2.2"
+solana-instruction = "2.3.0"
+solana-message = "2.4.0"
+solana-pubkey = "2.2"
+solana-short-vec = { version = "2.2.1", optional = true }
+
+[dev-dependencies]
+bincode = "1"
